@@ -2,7 +2,7 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: log_in.php");
+header("Location: /BananaSongOficial/index.html");
 exit();
 ?>
 <!-- Luis Manuel Reyes Condado -->
