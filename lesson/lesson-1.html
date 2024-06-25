@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BananaSong Beta</title>
+    <link rel="stylesheet" href="/css/UkeGame.css">
+</head>
+
+<body>
+    <script>
+        // Verificar si el navegador soporta getUserMedia
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            console.log('getUserMedia está soportado');
+
+            // Solicitar acceso al micrófono
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(function (stream) {
+                    // Permiso concedido, puedes usar el stream aquí
+                    console.log('Permiso concedido');
+                })
+                .catch(function (err) {
+                    // El usuario ha denegado el acceso al micrófono
+                    console.log('Error al obtener el stream: ' + err);
+                });
+        } else {
+            console.log('getUserMedia no está soportado en este navegador');
+        }
+
+    </script>
+    <div id="menu">
+        <h1>BananaSong Beta</h1>
+        <button onclick="startGame()">Comenzar</button>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="overlay" style="display:none;">
+        <button onclick="resumeGame()">Reanudar</button>
+        <button onclick="exitGame()">Salir</button>
+    </div>
+
+    <script src="/js/UkeGame.js"></script>
+    <script src="/js/fft.js"></script>
+</body>
+
+</html>
