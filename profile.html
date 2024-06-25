@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox Layout</title>
     <link rel="stylesheet" href="css/main.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = document.querySelectorAll('.nav-button');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    navButtons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,7 +46,11 @@
         </div>
         <div class="right-box">
             <div class="sidebar">
-                Barra de Navegación
+                <div class="nav-button">Profile</div>
+                <div class="nav-button">Learn</div>
+                <div class="nav-button">Quest</div>
+                <div class="nav-button">Leaderboard</div>
+                <div class="nav-button">Shop</div>
             </div>
         </div>
     </section>

@@ -13,7 +13,7 @@ html {
 }
 
 .left-box {
-    background-color: #6181f4;
+    background-color: #eaeaea;
     width: 30%;
     /* Ancho de la caja izquierda */
     height: 100%;
@@ -24,8 +24,8 @@ html {
 
 .friends-list {
     background-color: white;
-    width: 90%;
-    height: 90%;
+    width: 75%;
+    height: 75%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     box-sizing: border-box;
@@ -40,7 +40,7 @@ html {
 }
 
 .center-box {
-    background-color: #2a9d34;
+    background-color: #eaeaea;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@ html {
 
 .bottom-center-box {
     height: 50%;
-    background-color: #9d2a2a;
+    background-color: #eaeaea;
     /* Altura de la caja inferior central */
 }
 
@@ -96,6 +96,7 @@ html {
     width: 20%;
     /* Utilizamos aspect-ratio para hacer los recuadros cuadrados */
     aspect-ratio: 1 / 1;
+    border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
@@ -103,20 +104,45 @@ html {
 }
 
 .right-box {
-    background-color: #f2ff00;
+    background-color: #eaeaea;
     width: 20%;
     /* Ancho de la caja derecha */
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
 .sidebar {
     background-color: #ffffff;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Alinea los botones a la derecha */
+}
+
+.nav-button {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Para asegurar que los botones ocupan el 100% del ancho disponible */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-button.selected {
+    transform: translateX(-10%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
