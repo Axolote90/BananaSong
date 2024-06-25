@@ -1,59 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navButtons = document.querySelectorAll('.nav-button');
-
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    navButtons.forEach(btn => btn.classList.remove('selected'));
-                    button.classList.add('selected');
-                });
-            });
-        });
-    </script>
-</head>
-
-<body>
-    <section class="container">
-        <div class="left-box">
-            <div class="friends-list">
-                Lista de Amigos
+<!-- profile.html -->
+<div class="center-box top-center-box">
+    <div class="banner">
+        <div class="profile-pic-container">
+            <div class="profile-pic">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
             </div>
         </div>
-        <div class="center-container">
-            <div class="center-box top-center-box">
-                <div class="banner">
-                    <div class="profile-pic-container">
-                        <div class="profile-pic"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="center-box bottom-center-box">
-                <div class="stats">
-                    <div class="stat-box">Vidas</div>
-                    <div class="stat-box">Gemas</div>
-                    <div class="stat-box">Racha</div>
-                    <div class="stat-box">Clasificación</div>
-                </div>
-            </div>
+    </div>
+</div>
+<div class="center-box bottom-center-box">
+    <div class="stats">
+        <div class="stat-box">
+            <i class="fas fa-heart"></i>
+            <span class="stat-label">0000</span>
         </div>
-        <div class="right-box">
-            <div class="sidebar">
-                <div class="nav-button">Profile</div>
-                <div class="nav-button">Learn</div>
-                <div class="nav-button">Quest</div>
-                <div class="nav-button">Leaderboard</div>
-                <div class="nav-button">Shop</div>
-            </div>
+        <div class="stat-box">
+            <i class="fas fa-fire"></i>
+            <span class="stat-label">0000</span>
         </div>
-    </section>
-</body>
-
-</html>
+        <div class="stat-box">
+            <i class="fas fa-diamond"></i>
+            <span class="stat-label">0000</span>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-shield-alt"></i>
+            <span class="stat-label">0000</span>
+        </div>
+    </div>
+</div>

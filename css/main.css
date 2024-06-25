@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Spook&family=Titan+One&display=swap');
+
 body,
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: 100%;
+    color: #ffffff;
+    font-family: 'Spook', sans-serif;
 }
 
 .container {
@@ -13,7 +17,7 @@ html {
 }
 
 .left-box {
-    background-color: #eaeaea;
+    background-color: #f2c40cff;
     width: 30%;
     /* Ancho de la caja izquierda */
     height: 100%;
@@ -23,12 +27,47 @@ html {
 }
 
 .friends-list {
-    background-color: white;
+    background-color: #262626ff;
     width: 75%;
     height: 75%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    border-radius: 40px;
     box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.friends-list h1 {
+    padding-left: 10px;
+}
+
+.friend {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #595757ff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.friend-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #595757ff;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 43px; /* Tamaño del icono ajustado */
+    color: rgb(255, 255, 255); /* Color del icono ajustado */
+}
+
+
+.friend-name {
+    font-size: 16px;
 }
 
 .center-container {
@@ -40,7 +79,7 @@ html {
 }
 
 .center-box {
-    background-color: #eaeaea;
+    background-color: #f2c40cff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,14 +87,16 @@ html {
 
 .top-center-box {
     height: 50%;
+    padding-top: 40px;
     /* Altura de la caja superior central */
     position: relative;
 }
 
 .banner {
-    background-color: #ffffff;
-    width: 90%;
-    height: 90%;
+    background-color: #fcf2ccff;
+    color: #f2c40cff;
+    width: 80%;
+    height: 80%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -70,16 +111,23 @@ html {
 }
 
 .profile-pic {
-    background-color: #9d9d9d;
+    background-color: #f2c40cff; /* Color de fondo del perfil */
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 5px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 110px; /* Tamaño del icono */
+    color: #fcf2ccff; /* Color del icono */
+    border: 5px solid #f2c40cff; /* Borde del perfil */
 }
+
 
 .bottom-center-box {
     height: 50%;
-    background-color: #eaeaea;
+    background-color: #f2c40cff;
     /* Altura de la caja inferior central */
 }
 
@@ -92,19 +140,30 @@ html {
 }
 
 .stat-box {
-    background-color: #ffffff;
+    background-color: #262626ff;
     width: 20%;
     /* Utilizamos aspect-ratio para hacer los recuadros cuadrados */
     aspect-ratio: 1 / 1;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Titan One', sans-serif;
+}
+
+.stat-box i {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 20px;
 }
 
 .right-box {
-    background-color: #eaeaea;
+    background-color: #f2c40cff;
     width: 20%;
     /* Ancho de la caja derecha */
     height: 100%;
@@ -114,7 +173,7 @@ html {
 }
 
 .sidebar {
-    background-color: #ffffff;
+    background-color: #262626ff;
     width: 80%;
     height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -127,22 +186,36 @@ html {
 }
 
 .nav-button {
-    background-color: #ffffff;
+    background-color: #595757ff;
     padding: 10px 20px;
-    margin: 10px 0;
+    margin: 30px 0;
+    height: 50px;
     text-align: center;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 1px solid #595757ff;
+    border-radius: 20px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     width: 100%; /* Para asegurar que los botones ocupan el 100% del ancho disponible */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos alrededor */
+    align-items: center;
+    font-size: 18px;
+    padding-left: 20px; /* Añade un padding a la izquierda para separar el icono del texto */
+    padding-right: 20px; /* Añade un padding a la derecha para separar el texto del borde */
 }
 
-.nav-button:hover {
-    background-color: #f0f0f0;
+.nav-button i {
+    font-size: 40px;
+    margin-right: 10px; /* Ajusta el margen derecho del icono */
+}
+
+.nav-button:hover {     
+
 }
 
 .nav-button.selected {
     transform: translateX(-10%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
