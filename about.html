@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Homepage</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="imgs/10b28d43-87d9-4142-9a9f-1ab05f0d3245.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Workbench&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Workbench&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* General styling for the section */
+        .Pedro {
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        .PedroTitulo {
+            margin-bottom: 20px;
+        }
+
+        .PedroTitulo h2 {
+            font-size: 1em;
+            /* Smaller font size for the title */
+            margin: 0;
+        }
+
+        /* Styling for the content part with two columns */
+        .PedroContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        /* Column for the image */
+        .PedroImg {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            /* Center the image in its column */
+        }
+
+        .PedroImg img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Column for the text */
+        .PedroTexto {
+            flex: 1;
+            padding-right: 200px;
+            text-align: left;
+            /* Align text to the left */
+            font-size: 0.6em;
+            /* Smaller font size for the text */
+        }
+
+        /* Adding a vertical line between image and text */
+        .PedroContent::before {
+            content: '';
+            display: block;
+            width: 1px;
+            background: #ccc;
+            height: 100%;
+            margin: 0 20px;
+            /* Adjust spacing as needed */
+        }
+
+        /* Adding some padding around the section */
+        .pre-footer {
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 70;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="Index.php">
+                <h1>The Banana</h1>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Cursos.php">Cursos</a></li>
+                    <li><a href="Perfil.php">Perfil</a></li>
+                    <li><a href="About.php">Sobre Nosotros</a></li>
+                    <li><a href="contact.php">Contacto</a></li>
+                    <button id="openModalBtn">Registrar</button>
+                    <li id="auth-link"></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Botón para abrir el modal -->
+        
+
+        <!-- Modal de registro -->
+        <div id="registroModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="registroForm" class="modal-form" action="registro.php" method="POST"
+                    enctype="multipart/form-data">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required><br>
+
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required><br>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required><br>
+
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" name="sexo">
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                        <option value="O">Otro</option>
+                    </select><br>
+
+                    <label for="profile_picture">Foto de perfil (opcional):</label>
+                    <input type="file" id="profile_picture" name="profile_picture"><br>
+
+                    <label for="banner_picture">Foto de banner (opcional):</label>
+                    <input type="file" id="banner_picture" name="banner_picture"><br>
+
+                    <label for="instrument">Instrumento:</label>
+                    <input type="text" id="instrument" name="instrument" required><br>
+
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- CSS para el estilo del modal -->
+        <style>
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 600px;
+            }
+
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .modal-form label,
+            .modal-form input,
+            .modal-form select {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .modal-form button {
+                margin-top: 10px;
+            }
+        </style>
+
+        <!-- JavaScript para manejar la apertura y cierre del modal -->
+        <script>
+            // Obtener el modal
+            var modal = document.getElementById('registroModal');
+
+            // Obtener el botón que abre el modal
+            var btn = document.getElementById('openModalBtn');
+
+            // Obtener el elemento <span> que cierra el modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // Cuando el usuario hace clic en el botón, abrir el modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // Cuando el usuario hace clic en <span> (x), cerrar el modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Cuando el usuario hace clic en cualquier lugar fuera del modal, cerrar el modal
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <section class="hero">
+            <img src="img/se-observan-muchas-bananas-amarillas-y-realistas-t-sewlydodTN6OsIBKvDjCaA-C6BlVA6FQn2fV2QihIFAgA.jpeg"
+                alt="">
+            <h1>Sobre Nosotros</h1>
+            <p>Nos encanta la musica y asi como nos encanta tambien nos gusta enseñar a las personas a tocar sus
+                instrumentos favoritos siguiendo pasos y retos simples que sean entretenidos a la par que utiles.</p>
+            <div class="scroll-down" onclick="scrollToNextSection()">
+                <img src="img/angulo-doble-pequeno-hacia-abajo.png" alt="">
+            </div>
+        </section>
+
+        <section class="body">
+            <div class="BananaSong">
+                <h2>Que es Banana Song?</h2>
+                <p>Es una página para aprender a tocar tus instrumentos favoritos al lado de Pedro (después hablaremos
+                    más de él). En Banana song podrás encontrar lecciones fáciles y entendibles, además de retos para
+                    mejorar tus habilidades como músico. ¿Qué esperas? ¡Únete al racimo de bananas musicales!</p>
+            </div>
+        </section>
+
+        <section class="pre-footer">
+            <div class="Pedro">
+                <div class="PedroTitulo">
+                    <h2>Quien es pedro y por que es una banana que habla?</h2>
+                </div>
+                <div class="PedroContent">
+                    <div class="PedroImg">
+                        <img src="img/pedro-banana2.png" alt="Pedro la banana" width="60%">
+                    </div>
+                    <div class="PedroTexto">
+                        <p>Pedro es nuestra banana que habla oficial de banana song, así es no estás loco las bananas
+                            hablan y aquí tenemos una, y recuerda no te lo tragues no quedan muchos en existencia además
+                            pedro tiene esposa e hijos sé que el hambre en esta fuerte en esta carrera como músico, pero
+                            intenta aguantar por favor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.youtube.com" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function scrollToNextSection() {
+            const nextSection = document.querySelector('.body');
+            nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/php/check_session.php')
+                .then(response => response.json())
+                .then(data => {
+                    const authLink = document.getElementById('auth-link');
+                    if (data.loggedIn) {
+                        authLink.innerHTML = '<a href="log_out.php">Cerrar Sesión</a>';
+                    } else {
+                        authLink.innerHTML = '<a href="log_in.php">Iniciar Sesión</a>';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
