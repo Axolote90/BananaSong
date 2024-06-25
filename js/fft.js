@@ -1,8 +1,3 @@
-// Archivo: fft.js
-
-document.getElementById('start-button').addEventListener('click', startRecording);
-document.getElementById('stop-button').addEventListener('click', stopRecording);
-
 let audioContext;
 let analyser;
 let microphone;
@@ -22,15 +17,12 @@ const tones = [
     { min: 416, max: 422, note: "G#4" }, // G#4/Ab4
     { min: 464, max: 470, note: "A#4" }, // A#4/Bb4
     { min: 980, max: 988, note: "B4" }, // B4
-    { min: 1054, max: 1059, note: "C5" },//C5
+    { min: 1054, max: 1059, note: "C5" }, // C5
     { min: 523, max: 529, note: "C5" },  // C5
-    { min: 1123, max: 1127, note: "C#5" },//C#5
+    { min: 1123, max: 1127, note: "C#5" }, // C#5
 ];
 
 function startRecording() {
-    document.getElementById('start-button').disabled = true;
-    document.getElementById('stop-button').disabled = false;
-
     navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -62,7 +54,6 @@ function startRecording() {
                 
                 for (let i = 0; i < tones.length; i++) {
                     if (dominantFrequency >= tones[i].min && dominantFrequency <= tones[i].max) {
-                        document.getElementById('dominant-tone').innerText = tones[i].note;
                         if (onNoteDetected) onNoteDetected(tones[i].note); // Llamada al callback
                         found = true;
                         break;
@@ -70,11 +61,8 @@ function startRecording() {
                 }
                 
                 if (!found) {
-                    document.getElementById('dominant-tone').innerText = "null";
                     if (onNoteDetected) onNoteDetected("null"); // Llamada al callback
                 }
-                
-                document.getElementById('dominant-frequency').innerText = dominantFrequency.toFixed(2);
             };
 
             audioStream = stream;
@@ -83,9 +71,6 @@ function startRecording() {
 }
 
 function stopRecording() {
-    document.getElementById('start-button').disabled = false;
-    document.getElementById('stop-button').disabled = true;
-
     if (audioStream) {
         audioStream.getTracks().forEach(track => track.stop());
     }
@@ -99,3 +84,19 @@ function stopRecording() {
 function setNoteDetectedCallback(callback) {
     onNoteDetected = callback;
 }
+
+// Start recording automatically
+startRecording();
+
+// To stop recording, call the stopRecording function when needed
+
+// Callback para detectar notas y cambiar el color a verde y aumentar la puntuación
+setNoteDetectedCallback(function(detectedNote) {
+    for (let note of activeNotes) {
+        if (!note.detected && note.name === detectedNote && note.x > detectionAreaStartX && note.x < colorChangeLineX) {
+            note.detected = true;
+            score += 10; // Aumentar la puntuación si se detecta correctamente
+        }
+    }
+});
+

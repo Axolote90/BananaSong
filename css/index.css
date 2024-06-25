@@ -1,0 +1,532 @@
+:root {
+    --primary-color: #17181D;
+    --secondary-color: #f4d03f;
+    --background-color: #F8C603;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--primary-color);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Bakbak One', sans-serif;
+    font-size: 2rem;
+    color: var(--background-color);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #717070;
+    transition: color 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-list li a:hover {
+    color: var(--background-color);
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+.profile-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.profile-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.profile-menu .dropdown li {
+    list-style: none;
+}
+
+.profile-menu .dropdown li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-menu .dropdown li a:hover {
+    background-color: var(--secondary-color);
+}
+
+.hero-text {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.instruments {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+.instrument {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 1rem;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    cursor: pointer;
+}
+
+.instrument:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+    
+}
+
+
+.vector-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 25% 25%, var(--secondary-color), transparent 50%), 
+                radial-gradient(circle at 75% 75%, var(--secondary-color), transparent 50%);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.instrument img {
+    width: 250px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content.black-bg {
+    display: flex;
+}
+
+.content.black-bg .text {
+    flex: 1; /* El texto ocupa todo el espacio disponible */
+}
+
+.content.black-bg .image {
+    flex-shrink: 0; /* La imagen no se encogerá */
+    margin-left: 20px; /* Añade espacio entre el texto y la imagen */
+}
+
+.content.black-bg img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .instrument {
+        width: 100px;
+        height: 150px;
+    }
+
+    .instrument img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .instrument {
+        width: 100px;
+        height: 100px;
+    }
+
+    .instrument img {
+        width: 100px;
+    }
+}
+
+
+.black-bg {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 880px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--text-color);
+        font-family: 'Bakbak One', sans-serif;
+    }
+
+    .nav {
+        transform: translateX(100%);
+        visibility: hidden;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 75%;
+        background-color: var(--primary-color);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        transition: transform 0.5s ease;
+    }
+
+    .nav.visible {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-list li a {
+        color: #ececec;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+    }
+
+}
+
+ /* Resto de tu CSS */
+
+.hero {
+    position: relative;
+    height: 76vh; /* Ajusta la altura según tus necesidades */
+    background-image: url('https://31.media.tumblr.com/fcf54956372372586a128bea2852d195/tumblr_inline_n79oslVLu61scmhb6.gif'); /* Asegúrate de que esta sea la ruta correcta a tu imagen */
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px; /* Espacio para el header */
+}
+
+.hero-overlay {
+    position: absolute;
+    font-size: 10px;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-text {
+    color: var(--text-color);
+    text-align: left;
+    font-size: 20px;
+    margin: -23px;
+}
+
+.hero h1 {
+    margin-left: 100px;
+    margin-right: 15px;
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-right: 50px;
+    margin-left: 100px;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    margin-right: 15px;
+    margin-left: 100px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.0);
+        color: var(--text-color);
+        border: 1.5px solid var(--text-color); /* Añade un borde de 2px del color primario */
+        border-radius: 40px; /* Añade bordes redondeados, opcional */
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Añade una transición para el color del borde */
+}
+
+.hero button:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.content {
+    text-align: left;
+    padding: 2rem;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.black-bg {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 880px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--text-color);
+        font-family: 'Bakbak One', sans-serif;
+    }
+
+    .nav {
+        transform: translateX(100%);
+        visibility: hidden;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 75%;
+        background-color: var(--primary-color);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        transition: transform 0.5s ease;
+    }
+
+    .nav.visible {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-list li a {
+        color: #ececec;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+    }
+    
+
+    .hero-overlay {
+        display: none;
+    }
+
+    .hero-text {
+        color: var(--primary-color);
+        text-align: left;
+    }
+
+    .hero {
+        height: 25vh; /* Asegura que la imagen ocupe toda la altura de la pantalla */
+        color: var(--primary-color);
+        background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    }
+
+    .hero-content {
+        display: block;
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--background-color);
+        color: var(--primary-color);
+    }
+
+    .hero-content .hero-text {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-text button {
+        
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--background-color);
+        color: var(--primary-color);
+        border: 1.5px solid var(--primary-color); /* Añade un borde de 2px del color primario */
+        border-radius: 40px; /* Añade bordes redondeados, opcional */
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Añade una transición para el color del borde */
+    }
+    
+    .hero-text button:hover {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border: 1.5px solid var(--secondary-color); /* Cambia el color del borde al color secundario al hacer hover */
+    }
+    
+}
+
+.hero-content {
+    display: none;
+}
+
+@media screen and (max-width: 880px) {
+    .hero-content {
+        display: block;
+    }
+}
+
+/* Opcional: para una mejor transición entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+}
+
+/* Color de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color); /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 20px 0; /* Espaciado */
+    text-align: center; /* Centrar contenido */
+}
+
+footer .social-icons {
+    list-style: none; /* Quitar estilo de lista */
+    padding: 0;
+    display: flex; /* Usar flexbox para alineación */
+    justify-content: center; /* Centrar iconos horizontalmente */
+    gap: 15px; /* Espaciado entre iconos */
+}
+
+footer .social-icons li {
+    display: inline-block; /* Mostrar elementos en línea */
+}
+
+footer .social-icons a {
+    color: #fff; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Transición suave para cambio de color */
+}
+
+footer .social-icons a:hover {
+    color: #ffcc00; /* Color al pasar el cursor */
+}
