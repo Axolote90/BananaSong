@@ -16,6 +16,13 @@ html {
     /* Altura completa de la ventana */
 }
 
+.content {
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    /* Altura completa de la ventana */
+}
+
 .left-box {
     background-color: #f2c40cff;
     width: 30%;
@@ -61,8 +68,10 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 43px; /* Tamaño del icono ajustado */
-    color: rgb(255, 255, 255); /* Color del icono ajustado */
+    font-size: 43px;
+    /* Tamaño del icono ajustado */
+    color: rgb(255, 255, 255);
+    /* Color del icono ajustado */
 }
 
 
@@ -71,9 +80,10 @@ html {
 }
 
 .center-container {
+    background-color: #f2c40cff;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 70%;
     /* Ancho del contenedor central */
     height: 100%;
 }
@@ -103,15 +113,19 @@ html {
 
 .profile-pic-container {
     position: absolute;
-    bottom: -10%; /* Ajusta este valor para que la mitad del círculo quede fuera del banner */
+    bottom: -10%;
+    /* Ajusta este valor para que la mitad del círculo quede fuera del banner */
     left: 50%;
     transform: translateX(-50%);
-    width: 100px; /* Ajusta el tamaño según sea necesario */
-    height: 100px; /* Ajusta el tamaño según sea necesario */
+    width: 100px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 100px;
+    /* Ajusta el tamaño según sea necesario */
 }
 
 .profile-pic {
-    background-color: #f2c40cff; /* Color de fondo del perfil */
+    background-color: #f2c40cff;
+    /* Color de fondo del perfil */
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -119,9 +133,12 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 110px; /* Tamaño del icono */
-    color: #fcf2ccff; /* Color del icono */
-    border: 5px solid #f2c40cff; /* Borde del perfil */
+    font-size: 110px;
+    /* Tamaño del icono */
+    color: #fcf2ccff;
+    /* Color del icono */
+    border: 5px solid #f2c40cff;
+    /* Borde del perfil */
 }
 
 
@@ -182,7 +199,8 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end; /* Alinea los botones a la derecha */
+    align-items: flex-end;
+    /* Alinea los botones a la derecha */
 }
 
 .nav-button {
@@ -195,27 +213,103 @@ html {
     border: 1px solid #595757ff;
     border-radius: 20px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    width: 100%; /* Para asegurar que los botones ocupan el 100% del ancho disponible */
+    width: 100%;
+    /* Para asegurar que los botones ocupan el 100% del ancho disponible */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos alrededor */
+    justify-content: space-between;
+    /* Distribuye los elementos alrededor */
     align-items: center;
     font-size: 18px;
-    padding-left: 20px; /* Añade un padding a la izquierda para separar el icono del texto */
-    padding-right: 20px; /* Añade un padding a la derecha para separar el texto del borde */
+    padding-left: 20px;
+    /* Añade un padding a la izquierda para separar el icono del texto */
+    padding-right: 20px;
+    /* Añade un padding a la derecha para separar el texto del borde */
 }
 
 .nav-button i {
     font-size: 40px;
-    margin-right: 10px; /* Ajusta el margen derecho del icono */
+    margin-right: 10px;
+    /* Ajusta el margen derecho del icono */
 }
 
-.nav-button:hover {     
-
-}
+.nav-button:hover {}
 
 .nav-button.selected {
     transform: translateX(-10%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/*Learn.html*/
+.statistics {
+    margin: 30px;
+    width: 350px ;
+    height:250px ;
+    background-color: #333;
+    /* Fondo gris oscuro */
+    padding: 20px;
+    border-radius: 40px;
+    /* Bordes redondeados opcional */
+    color: white;
+    /* Color del texto */
+    font-family: 'Titan One', sans-serif;
+}
+
+.stat-row {
+    padding: 10px 30px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat i {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+.classification i {
+    font-size: 80px;
+    padding-left: 20px;
+}
+
+.stat-label {
+    font-size: 18px;
+}
+
+.classification {
+    border-radius: 30px;
+    height: 115px;
+    background-color: #595757ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.classification-label {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.level-button {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #262626ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-size: 70px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.level-button:hover {
+    transform: scale(1.1);
+}
