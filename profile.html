@@ -1,103 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spook&family=Titan+One&display=swap">
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navButtons = document.querySelectorAll('.nav-button');
-
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    navButtons.forEach(btn => btn.classList.remove('selected'));
-                    button.classList.add('selected');
-                });
-            });
-        });
-    </script>
-</head>
-
-<body>
-    <section class="container">
-        <div class="left-box">
-            <div class="friends-list">
-                <h1>Amigos</h1>
-                <div class="friend">
-                    <div class="friend-pic"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
-                    <div class="friend-name">Amigo 1</div>
-                </div>
-                <div class="friend">
-                    <div class="friend-pic"></div>
-                    <div class="friend-name">Amigo 2</div>
-                </div>
-                <div class="friend">
-                    <div class="friend-pic"></div>
-                    <div class="friend-name">Amigo 3</div>
-                </div>
+<!-- profile.html -->
+<div class="center-box top-center-box">
+    <div class="banner">
+        <div class="profile-pic-container">
+            <div class="profile-pic">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
             </div>
         </div>
-        <div class="center-container">
-            <div class="center-box top-center-box">
-                <div class="banner">
-                    <div class="profile-pic-container">
-                        <div class="profile-pic">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="center-box bottom-center-box">
-                <div class="stats">
-                    <div class="stat-box">
-                        <i class="fas fa-heart"></i>
-                        <span class="stat-label">0000</span>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-diamond"></i>
-                        <span class="stat-label">0000</span>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-fire"></i>
-                        <span class="stat-label">0000</span>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-shield-alt"></i>
-                        <span class="stat-label">0000</span>
-                    </div>
-                </div>
-            </div>
+    </div>
+</div>
+<div class="center-box bottom-center-box">
+    <div class="stats">
+        <div class="stat-box">
+            <i class="fas fa-heart"></i>
+            <span class="stat-label">0000</span>
         </div>
-        <div class="right-box">
-            <div class="sidebar">
-                <div class="nav-button">
-                    Profile
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="nav-button">
-                    Learn
-                    <i class="fas fa-book"></i>
-                </div>
-                <div class="nav-button">
-                    Quest
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <div class="nav-button">
-                    Leaderboard
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="nav-button">
-                    Shop
-                    <i class="fas fa-store"></i>
-                </div>
-            </div>
+        <div class="stat-box">
+            <i class="fas fa-fire"></i>
+            <span class="stat-label">0000</span>
         </div>
-    </section>
-</body>
-
-</html>
+        <div class="stat-box">
+            <i class="fas fa-diamond"></i>
+            <span class="stat-label">0000</span>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-shield-alt"></i>
+            <span class="stat-label">0000</span>
+        </div>
+    </div>
+</div>
