@@ -143,6 +143,14 @@
                                 </select>
                             </div>
                             <div class="full-width">
+                                <label for="profile_picture">Foto de perfil:</label>
+                                <input type="file" id="profile_picture" name="profile_picture">
+                            </div>
+                            <div class="full-width">
+                                <label for="banner_picture">Foto de banner:</label>
+                                <input type="file" id="banner_picture" name="banner_picture">
+                            </div>
+                            <div class="full-width">
                                 <input type="submit" value="Registrar">
                             </div>
                         </div>

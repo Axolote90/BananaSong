@@ -1,33 +1,3 @@
-// Verificar si el navegador soporta getUserMedia
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  console.log('getUserMedia está soportado');
-
-  // Solicitar acceso al micrófono
-  navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(function (stream) {
-          console.log('Permiso concedido');
-          // Crear el contexto de audio
-          audioContext = new (window.AudioContext || window.webkitAudioContext)();
-          // Crear una fuente de media stream
-          mediaStreamSource = audioContext.createMediaStreamSource(stream);
-          // Conectar la fuente al destino (los altavoces)
-          mediaStreamSource.connect(audioContext.destination);
-
-          // Evitar que el contexto de audio se suspenda
-          document.addEventListener('visibilitychange', function () {
-              if (document.visibilityState === 'hidden') {
-                  audioContext.resume();
-              }
-          });
-
-      })
-      .catch(function (err) {
-          console.log('Error al obtener el stream: ' + err);
-      });
-} else {
-  console.log('getUserMedia no está soportado en este navegador');
-}
-
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const overlay = document.getElementById("overlay");
