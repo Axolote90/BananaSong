@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cargar el perfil por defecto al cargar la página
-    loadContent('learn.html');
+    loadContent('quest.html');
 
     function loadContent(page) {
         fetch(page)
