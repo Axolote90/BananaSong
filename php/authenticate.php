@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['racha'] = $racha;
         $_SESSION['clasificacion'] = $clasificacion;
 
-        header("Location: ../BananaSong.html"); // Ajuste de ruta para redirigir a la carpeta principal
+        header("Location: ../bananabong.html"); // Ajuste de ruta para redirigir a la carpeta principal
         exit();
     } else {
         // Contraseña inválida, mostrar mensaje de error
