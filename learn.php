@@ -1,7 +1,4 @@
-<!-- learn.html -->
-<?php
-session_start();
-?>
+
 
 <style>
     .left-box {
