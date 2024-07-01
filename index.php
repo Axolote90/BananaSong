@@ -625,7 +625,6 @@ section {
             <ul class="nav-list">
                 <li>
                     <div class="profile-menu">
-                        <img src="img/circulo-de-usuario.png" alt="Profile" class="profile-img">
                         <ul class="dropdown">
                             <li><a href="#">Perfil</a></li>
                             <li><a href="#">Iniciar sesión</a></li>

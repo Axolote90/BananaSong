@@ -2,6 +2,15 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const overlay = document.getElementById("overlay");
 
+const pointsPerNote = 100; // Puntos por nota tocada correctamente
+let gameOver = false; // Indicar si el juego ha terminado
+
+function detectCollision(note) {
+  const detectionThreshold = 20; // Umbral de detección (ajusta según sea necesario)
+  return note.x < colorChangeLineX + detectionThreshold && note.x > colorChangeLineX - detectionThreshold;
+}
+
+
 let gamePaused = false;
 let linePositionX = -400; // Posición inicial de las líneas
 let activeNotes = []; // Lista de notas activas

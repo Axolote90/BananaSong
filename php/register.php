@@ -5,10 +5,16 @@ include 'db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encriptar la contraseña
+    $password = $_POST['password']; // Sin encriptar la contraseña
     $telefono = $_POST['telefono'];
     $sexo = $_POST['sexo'];
     $instrument = !empty($_POST['instrument']) ? $_POST['instrument'] : NULL;
+
+    // Valores predeterminados para nuevos usuarios
+    $vidas = 5;
+    $gemas = 0;
+    $racha = 0;
+    $clasificacion = 0;
 
     // Manejo de archivos
     $profile_picture = NULL;
@@ -32,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "El correo ya está registrado.";
     } else {
         // Insertar el nuevo usuario en la base de datos
-        $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone, sex, profile_picture, banner_picture, instrument) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssss", $nombre, $correo, $password, $telefono, $sexo, $profile_picture, $banner_picture, $instrument);
+        $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone, sex, profile_picture, banner_picture, instrument, vidas, gemas, racha, clasificacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssiiis", $nombre, $correo, $password, $telefono, $sexo, $profile_picture, $banner_picture, $instrument, $vidas, $gemas, $racha, $clasificacion);
 
         if (!is_null($profile_picture)) {
             $stmt->send_long_data(5, $profile_picture);
@@ -47,9 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $nombre;
             $_SESSION['email'] = $correo;
             $_SESSION['id'] = $stmt->insert_id;
+            $_SESSION['profile_picture'] = $profile_picture;
+            $_SESSION['banner_picture'] = $banner_picture;
+            $_SESSION['vidas'] = $vidas;
+            $_SESSION['gemas'] = $gemas;
+            $_SESSION['racha'] = $racha;
+            $_SESSION['clasificacion'] = $clasificacion;
 
-            // Redirigir a la página learn.html
-            header("Location: bananasong.html");
+            // Redirigir a la página bananasong.html
+            header("Location: ../bananasong.html"); // Ajuste de ruta para redirigir a la carpeta principal
             exit();
         } else {
             echo "Error en el registro. Inténtalo de nuevo.";
