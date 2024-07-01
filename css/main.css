@@ -380,3 +380,90 @@ html {
     background-color:#f2c40cff;
     width: 0;
 }
+
+.icon {
+    color: white;
+    font-size: 32px; /* Ajusted font size */
+}
+
+.text-container {
+    color: white;
+    font-size: 18px; /* Adjusted text size */
+}
+
+.main {
+    background-color: #f2c40cff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Ajuste para ocupar todo el ancho de la vista */
+    height: 100vh; /* Ajuste para ocupar todo el alto de la vista */
+    box-sizing: border-box; /* Asegurar que el padding no afecta el tamaño total */
+}
+
+.center-square {
+    background-color: #262626ff;
+    width: 50vw; /* Ajuste para que el contenedor sea un cuadrado */
+    height: 50vw; /* Ajuste para que el contenedor sea un cuadrado */
+    max-width: 600px; /* Limitar el tamaño máximo */
+    max-height: 600px; /* Limitar el tamaño máximo */
+    border-radius: 50px; /* Aumentar el valor para hacer las esquinas más redondeadas */
+    display: flex; /* Usar flexbox para la disposición */
+    flex-direction: column; /* Disponer los elementos en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px; /* Padding interno */
+    box-sizing: border-box; /* Asegurar que el padding no afecta el tamaño total */
+}
+
+.card {
+    background-color: #595757ff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Asegurar que el contenido dentro de la tarjeta esté en columna */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ajustar el ancho al 100% del contenedor padre */
+    box-sizing: border-box; /* Asegurar que el padding no afecta el tamaño total */
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ajustar el ancho al 100% del contenedor padre */
+    box-sizing: border-box; /* Asegurar que el padding no afecta el tamaño total */
+}
+
+.heart-icon {
+    font-size: 36px;
+    color: white;
+    margin-right: 20px;
+}
+
+.text {
+    color: white;
+}
+
+.text h3 {
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.button {
+    background-color: #f2c40cff;
+    color: black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre el contenido y el botón */
+}
