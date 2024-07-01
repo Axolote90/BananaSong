@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['clasificacion'] = $clasificacion;
 
             // Redirigir a la página bananasong.html
-            header("Location: ../bananasong.html"); // Ajuste de ruta para redirigir a la carpeta principal
+            header("Location: ../bananasong.php"); // Ajuste de ruta para redirigir a la carpeta principal
             exit();
         } else {
             echo "Error en el registro. Inténtalo de nuevo.";
