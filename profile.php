@@ -1,7 +1,5 @@
 <!-- profile.html -->
-<?php
-session_start();
-?>
+
 
 <style>
         /* Estilos para el modal */
